@@ -1,22 +1,23 @@
 from django.contrib.auth import get_user_model
-from django.test import TestCase
+import pytest
 
 
-class CustomUserTests(TestCase):
+@pytest.mark.django_db
+class TestCustomUser:
+    user = get_user_model()
+
     def test_create_user(self):
-        User = get_user_model()
-        user = User.objects.create_user(
+        user = self.user.objects.create_user(
             username="testuser",
             email="3u9oK@example.com",
             password="testpass123",
         )
-        self.assertEqual(user.username, "testuser")
+        assert user.username == "testuser"
 
     def test_create_superuser(self):
-        User = get_user_model()
-        admin_user = User.objects.create_superuser(
+        admin_user = self.user.objects.create_superuser(
             username="superadmin",
             email="4nSjL@example.com",
             password="testpass123",
         )
-        self.assertTrue(admin_user.is_superuser)
+        assert admin_user.is_superuser is True
