@@ -1,4 +1,4 @@
-FROM python:3.12.2-alpine3.19
+FROM --platform=linux/amd64 python:3.12.2-alpine3.19
 
 ENV PIP_DISABLE_PIP_VERSION_CHECK=1 \
     PYTHONDONTWRITEBYTECODE=1 \
