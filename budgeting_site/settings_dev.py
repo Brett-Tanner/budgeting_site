@@ -10,7 +10,6 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
-import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -20,11 +19,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
-SECRET_KEY = os.environ.get("SECRET_KEY")
+# SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = "django-insecure-71e#1pt4g)c4mq5o-)x4b%s50s3ise9sqaho7&2h4z3gz&2v8r"
 
-DEBUG = False
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = True
 
-ALLOWED_HOSTS = ["budgeting-site.fly.dev", "budgeting-site.brett-tanner.dev"]
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -73,7 +74,16 @@ WSGI_APPLICATION = "budgeting_site.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-DATABASES = {"default": {"DATABASE_URL": os.environ.get("DATABASE_URL")}}
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "postgres",
+        "USER": "postgres",
+        "PASSWORD": "postgres",
+        "HOST": "db",
+        "PORT": 5432,
+    }
+}
 
 
 # Password validation
@@ -119,7 +129,3 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # Use our own user model
 AUTH_USER_MODEL = "accounts.CustomUser"
-
-# Override production variables if in dev environment
-if os.environ.get("DEBUG", False):
-    from .settings_dev import *

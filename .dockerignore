@@ -1,3 +1,9 @@
-.venv
-.git
+fly.toml
+.git/
+.mypy_cache/
+.pytest_cache/
+.venv/
+*.sqlite3
 .gitignore
+mypy.ini
+pytest.ini

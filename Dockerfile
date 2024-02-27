@@ -6,7 +6,16 @@ ENV PIP_DISABLE_PIP_VERSION_CHECK=1 \
 
 WORKDIR /app
 
+RUN apk update && apk add --no-cache \
+	libpq-dev \
+	gcc \
+	bash
+
 COPY requirements.txt .
 RUN pip install -r requirements.txt
 
+EXPOSE 8000
+
 COPY . .
+
+CMD ["gunicorn", "budgeting_site.wsgi"]
