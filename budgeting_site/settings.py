@@ -25,9 +25,6 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 
 DEBUG = False
 
-ALLOWED_HOSTS = ["budgeting-site.fly.dev", "budgeting-site.brett-tanner.dev"]
-
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -126,6 +123,14 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # Use our own user model
 AUTH_USER_MODEL = "accounts.CustomUser"
+
+# Trust prod domains
+CSRF_TRUSTED_ORIGINS = [
+    "https://budgeting-site.fly.dev",
+    "https://budgets.brett-tanner.dev",
+]
+ALLOWED_HOSTS = ["budgeting-site.fly.dev", "budgeting-site.brett-tanner.dev"]
+
 
 # Override production variables if in dev environment
 if os.environ.get("DEBUG", False):
