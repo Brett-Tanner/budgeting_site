@@ -17,5 +17,6 @@ RUN pip install -r requirements.txt
 EXPOSE 8000
 
 COPY . .
+RUN python manage.py collectstatic --noinput
 
 CMD ["gunicorn", "budgeting_site.wsgi"]
