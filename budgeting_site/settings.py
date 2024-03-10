@@ -54,7 +54,7 @@ ROOT_URLCONF = "budgeting_site.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [BASE_DIR / "templates"],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -131,6 +131,8 @@ CSRF_TRUSTED_ORIGINS = [
 ]
 ALLOWED_HOSTS = ["budgeting-site.fly.dev", "budgeting-site.brett-tanner.dev"]
 
+LOGIN_REDIRECT_URL = "home"
+LOGOUT_REDIRECT_URL = "home"
 
 # Override production variables if in dev environment
 if os.environ.get("DEBUG", False):
