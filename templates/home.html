@@ -1,16 +1,24 @@
 {% extends 'base.html' %}
-
-{% block title %}BBB | Home{% endblock %}
-
 {% block content %}
-{% if user.is_authenticated %}
-<h1>Hi, {{ user.username }}</h1>
-<form action="{% url 'logout' %}" method="post">
-	{% csrf_token %}
-	<input type="submit" value="Log out">
-</form>
-{% else %}
-<h1>Please log in <a href="{% url 'login' %}">here</a></h1>
-<h3>or sign up <a href="{% url 'signup' %}">here</a></h3>
-{% endif %}
+    {% if user.is_authenticated %}
+        <nav class="h-80 bg-dark-blue font-bold text-neutral-gold">
+            <form action="{% url 'logout' %}" method="post">
+                {% csrf_token %}
+                <input type="submit" value="Log out">
+            </form>
+        </nav>
+        <h1>Hi, {{ user.username }}</h1>
+    {% else %}
+        <main class="flex h-screen items-center justify-center">
+            <div class="flex w-[20vw] flex-col items-center gap-3 text-center text-3xl font-bold text-neutral-gold">
+                <a href="{% url 'login' %}" class="btn btn-primary w-full">Log in</a>
+                <div class="flex w-full items-center gap-1">
+                    <hr class="flex-grow border-2 border-neutral-gold">
+                    <p class="text-base text-neutral-gold">OR</p>
+                    <hr class="flex-grow border-2 border-neutral-gold">
+                </div>
+                <a href="{% url 'signup' %}" class="btn btn-primary w-full">Sign up</a>
+            </div>
+        </main>
+    {% endif %}
 {% endblock content %}

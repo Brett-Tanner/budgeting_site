@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+	input:not([type=submit]) {
+		@apply rounded-lg p-1 focus-visible:outline-none focus-visible:outline-neutral-gold
+	}
+}
+
+@layer components {
+	.btn {
+		@apply border rounded-lg p-2 focus-visible:outline-none focus-visible:outline-neutral-gold
+	}
+
+	.btn-primary {
+		@apply border-light-gold text-neutral-gold hover:bg-neutral-gold hover:text-neutral-blue
+	}
+}
