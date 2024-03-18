@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block template %}
+	{% include 'nav.html' %}
+	<main class="flex h-screen items-center justify-center text-center text-2xl">
+		{% block content %}
+		{% endblock content %}
+	</main>
+{% endblock template %}

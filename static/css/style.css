@@ -581,8 +581,27 @@ input:not([type=submit]):focus-visible {
   color: rgb(0 63 136 / var(--tw-text-opacity));
 }
 
+.main_nav_link {
+  padding: 0.5rem;
+}
+
+.main_nav_link:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(253 197 0 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(0 41 107 / var(--tw-text-opacity));
+}
+
 .static {
   position: static;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.top-0 {
+  top: 0px;
 }
 
 .block {
@@ -593,24 +612,28 @@ input:not([type=submit]):focus-visible {
   display: flex;
 }
 
-.h-80 {
-  height: 20rem;
+.h-12 {
+  height: 3rem;
 }
 
 .h-screen {
   height: 100vh;
 }
 
-.w-\[20vw\] {
-  width: 20vw;
-}
-
 .w-full {
   width: 100%;
 }
 
+.w-screen {
+  width: 100vw;
+}
+
 .flex-grow {
   flex-grow: 1;
+}
+
+.cursor-pointer {
+  cursor: pointer;
 }
 
 .flex-col {
@@ -623,6 +646,10 @@ input:not([type=submit]):focus-visible {
 
 .justify-center {
   justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
 }
 
 .gap-1 {
@@ -664,10 +691,6 @@ input:not([type=submit]):focus-visible {
   background-color: rgb(0 63 136 / var(--tw-bg-opacity));
 }
 
-.p-3 {
-  padding: 0.75rem;
-}
-
 .p-5 {
   padding: 1.25rem;
 }
@@ -691,11 +714,6 @@ input:not([type=submit]):focus-visible {
   line-height: 1.5rem;
 }
 
-.text-sm {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-}
-
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
@@ -713,4 +731,10 @@ input:not([type=submit]):focus-visible {
 .text-red-400 {
   --tw-text-opacity: 1;
   color: rgb(248 113 113 / var(--tw-text-opacity));
+}
+
+@media (min-width: 768px) {
+  .md\:w-\[20vw\] {
+    width: 20vw;
+  }
 }

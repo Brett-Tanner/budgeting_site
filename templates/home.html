@@ -1,16 +1,11 @@
-{% extends 'base.html' %}
+{% extends 'unauthenticated.html' %}
 {% block content %}
     {% if user.is_authenticated %}
-        <nav class="h-80 bg-dark-blue font-bold text-neutral-gold">
-            <form action="{% url 'logout' %}" method="post">
-                {% csrf_token %}
-                <input type="submit" value="Log out">
-            </form>
-        </nav>
+        {% include 'nav.html' %}
         <h1>Hi, {{ user.username }}</h1>
     {% else %}
         <main class="flex h-screen items-center justify-center">
-            <div class="flex w-[20vw] flex-col items-center gap-3 text-center text-3xl font-bold text-neutral-gold">
+            <div class="flex flex-col items-center gap-3 text-center text-3xl font-bold text-neutral-gold md:w-[20vw]">
                 <a href="{% url 'login' %}" class="btn btn-primary w-full">Log in</a>
                 <div class="flex w-full items-center gap-1">
                     <hr class="flex-grow border-2 border-neutral-gold">
