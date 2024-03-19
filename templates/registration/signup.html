@@ -2,8 +2,7 @@
 {% block title %}BBB | Sign Up{% endblock %}
 {% block content %}
     <main class="flex h-screen items-center justify-center">
-        <form method="post"
-              class="flex flex-col items-center gap-5 rounded-xl border-2 border-neutral-gold p-5 text-neutral-gold">
+        <form method="post" class="form">
             {% csrf_token %}
             {% for field in form %}
                 <div class="flex w-full flex-col gap-2">

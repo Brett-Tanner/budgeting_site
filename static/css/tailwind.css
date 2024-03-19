@@ -17,7 +17,11 @@
 		@apply border-light-gold text-neutral-gold hover:bg-neutral-gold hover:text-neutral-blue
 	}
 
+	.form {
+		@apply flex flex-col items-center gap-5 rounded-xl border-2 border-neutral-gold p-5 text-neutral-gold
+	}
+
 	.main_nav_link {
-		@apply p-2 hover:bg-neutral-gold hover:text-dark-blue
+		@apply h-full flex items-center p-2 hover:bg-neutral-gold hover:text-dark-blue
 	}
 }
