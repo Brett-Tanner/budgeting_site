@@ -50,6 +50,19 @@ Have a way of easily copying budgets from month to month along with their catego
 - Belong to a budget
 - Belong to a user
 
+## Rules
+
+### Fields
+
+| Field | Type | Null | Key | Default | Extras |
+| ----- | ---- | ---- | --- | ------- | ----- |
+| pattern | varchar | NO | NO | NULL | NULL |
+| category_id | int | NO | FK | NULL | NULL |
+
+### Associations
+
+- Belong to a category
+
 ## Transactions
 
 ### Fields
