@@ -37,7 +37,13 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "accounts.apps.AccountsConfig",
     "pages.apps.PagesConfig",
+    "budgets.apps.BudgetsConfig",
+    "rules.apps.RulesConfig",
+    "categories.apps.CategoriesConfig",
+    "transactions.apps.TransactionsConfig",
 ]
+
+TIME_ZONE = "Asia/Tokyo"
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",

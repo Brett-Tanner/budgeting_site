@@ -1,7 +1,7 @@
 {% extends 'unauthenticated.html' %}
 {% block content %}
     {% if user.is_authenticated %}
-        {% include 'nav.html' %}
+        {% include './shared/nav.html' %}
         <h1>Hi, {{ user.username }}</h1>
     {% else %}
         <main class="flex h-screen items-center justify-center">

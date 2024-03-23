@@ -8,8 +8,8 @@ Have a way of easily copying budgets from month to month along with their catego
 
 | Field | Type | Null | Key | Default | Extras |
 | ----- | ---- | ---- | --- | ------- | ----- |
+| name | varchar | NO | NO | NULL | NULL |
 | user_id | int | NO | FK | NULL | NULL |
-| shared_with | int/jsonb/array | YES | FK | NULL/[] | NULL |
 | income | int | NO | NO | 0 | NULL |
 | start_date | date | NO | NO | NULL | NULL |
 | end_date | date | NO | NO | NULL | NULL |
