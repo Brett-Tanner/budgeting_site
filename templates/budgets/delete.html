@@ -1,0 +1,14 @@
+{% extends 'authenticated.html' %}
+{% block title %}BBB | Delete Budget{% endblock %}
+{% block content %}
+    <main class="flex h-screen items-center justify-center text-center text-2xl">
+        <form action="" method="post">
+            {% csrf_token %}
+            <p>Are you sure you want to delete {{ budget.name }}?</p>
+            <input type="submit"
+                   value="Delete"
+                   aria-label="Delete"
+                   class="btn bg-red-700">
+        </form>
+    </main>
+{% endblock content %}

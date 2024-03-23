@@ -1,7 +1,7 @@
 <nav class="fixed top-0 flex h-12 w-screen items-center justify-between gap-3 bg-dark-blue font-bold text-neutral-gold">
 	<a href="{% url 'home' %}" class="main_nav_link">BBB</a>
 	<div class="flex-grow"></div>
-	<a href="{% url 'password_reset' %}" class="main_nav_link">Reset Password</a>
+	<a href="{% url 'budgets' %}" class="main_nav_link">Budgets</a>
 	<form action="{% url 'logout' %}" method="post" class="h-full">
 		{% csrf_token %}
 		<input type="submit" value="Log out" aria-label="Log out" class="main_nav_link cursor-pointer">
