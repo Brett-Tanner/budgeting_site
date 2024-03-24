@@ -8,7 +8,7 @@ from .forms import BudgetForm
 
 class BudgetListView(ListView):
     model = Budget
-    template_name = "budgets/budgets.html"
+    template_name = "budgets/list.html"
 
 
 class BudgetDetailView(DetailView):

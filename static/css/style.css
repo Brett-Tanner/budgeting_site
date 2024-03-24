@@ -634,6 +634,10 @@ input:not([type=submit]):focus-visible {
   display: flex;
 }
 
+.table {
+  display: table;
+}
+
 .h-12 {
   height: 3rem;
 }
@@ -714,6 +718,11 @@ input:not([type=submit]):focus-visible {
   border-width: 2px;
 }
 
+.border-y {
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+}
+
 .border-neutral-gold {
   --tw-border-opacity: 1;
   border-color: rgb(253 197 0 / var(--tw-border-opacity));
@@ -769,6 +778,11 @@ input:not([type=submit]):focus-visible {
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
 }
 
 .font-bold {

@@ -1,0 +1,34 @@
+{% extends 'authenticated.html' %}
+
+{% block title %}BBB | Categories{% endblock title %}
+{% block content %}
+    <main class="flex flex-wrap items-start justify-around gap-3 p-3">
+        <h1 class="w-full text-center text-4xl font-bold">Categories</h1>
+        <div class="flex w-full items-center justify-center">
+            <a href="{% url 'new_category' %}" class="btn btn-primary">Add new category</a>
+        </div>
+		<table aria-label="Categories table" class="w-full text-center">
+			<thead>
+				<tr>
+					<th class="text-2xl font-bold">Name</th>
+					<th class="text-2xl font-bold">Edit</th>
+					<th class="text-2xl font-bold">Delete</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				{% for category in category_list %}
+				<tr class="border-y border-neutral-gold">
+					<td class="p-2 text-xl font-bold">{{ category.name }}</h2>
+					<td class="p-2">
+						<a href="{% url 'edit_category' category.id %}" class="btn btn-primary">Edit</a>
+					</td>
+					<td class="p-2">
+						<a href="{% url 'delete_category' category.id %}" class="btn bg-red-700 text-white">Delete</a>
+					</td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+    </main>
+{% endblock %}
