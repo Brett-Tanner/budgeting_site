@@ -2,6 +2,7 @@ from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from django.urls import reverse_lazy
 from django.shortcuts import render
+
 from .models import Budget
 from .forms import BudgetForm
 
@@ -26,11 +27,7 @@ class BudgetCreateView(CreateView):
         form = BudgetForm(request.POST)
         if form.is_valid():
             instance = form.save(commit=False)
-            print(request.user.id)
-            print(instance)
             instance.user_id = request.user.id
-            print(instance.user)
-            print(instance.user_id)
             instance.save()
             return render(request, "budgets/budget.html", {"budget": instance})
 

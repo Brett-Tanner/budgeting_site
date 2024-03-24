@@ -1,8 +1,10 @@
 from django.views.generic import ListView
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from django.urls import reverse_lazy
+from django.shortcuts import render
 
 from .models import Transaction
+from .forms import TransactionForm
 
 
 class TransactionListView(ListView):
@@ -14,7 +16,15 @@ class TransactionCreateView(CreateView):
     model = Transaction
     fields = ["name", "amount", "category"]
     template_name = "transactions/new.html"
-    success_url = reverse_lazy("transactions")
+    form = TransactionForm()
+
+    def post(self, request, *args, **kwargs):
+        form = TransactionForm(request.POST)
+        if form.is_valid():
+            instance = form.save(commit=False)
+            instance.user = request.user
+            instance.save()
+            return render(request, "transactions/list.html", {"transaction": instance})
 
 
 class TransactionUpdateView(UpdateView):

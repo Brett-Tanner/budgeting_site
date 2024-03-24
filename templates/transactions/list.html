@@ -11,19 +11,26 @@
         <table aria-label="Transactions table" class="w-full text-center">
             <thead>
                 <tr>
-                    <th class="text-lg font-bold">Name</th>
-                    <th class="text-lg font-bold">Amount</th>
-                    <th class="text-lg font-bold">Category</th>
-                    <th class="text-lg font-bold">Date</th>
+                    <th class="border border-neutral-gold/50 text-lg font-bold">Date</th>
+                    <th class="border border-neutral-gold/50 text-lg font-bold">Person</th>
+                    <th class="border border-neutral-gold/50 text-lg font-bold">Category</th>
+                </tr>
+                <tr>
+                    <th class="border border-neutral-gold/50 text-lg font-bold" colspan="2">Description</th>
+                    <th class="border border-neutral-gold/50 text-lg font-bold">Amount</th>
                 </tr>
             </thead>
             <tbody>
                 {% for transaction in transaction_list %}
-                    <tr class="border-y border-neutral-gold">
-                        <td class="p-2 font-bold">{{ transaction.name }}</td>
-                        <td>{{ transaction.amount }}円</td>
-                        <td class="p-2">{{ transaction.category.name }}</td>
-                        <td class="p-2">{{ transaction.date }}</td>
+                    <tr>
+                        <td class="border-r border-neutral-blue bg-neutral-gold/90 p-2 text-neutral-blue">{{ transaction.date }}</td>
+                        <td class="bg-neutral-gold/90 p-2 text-neutral-blue">{{ transaction.user.username }}</td>
+                        <td class="border-l border-neutral-blue bg-neutral-gold/90 p-2 text-neutral-blue">{{ transaction.category.name }}</td>
+                    </tr>
+                    <tr>
+                        <td class="border border-neutral-gold/50 border-b-neutral-gold p-2"
+                            colspan="2">{{ transaction.name }}</td>
+                        <td class="border border-neutral-gold/50 border-b-neutral-gold p-2">{{ transaction.amount }}円</td>
                     </tr>
                 {% endfor %}
             </tbody>
