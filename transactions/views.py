@@ -1,7 +1,7 @@
 from django.views.generic import ListView
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from django.urls import reverse_lazy
-from django.shortcuts import render
+from django.shortcuts import redirect
 
 from .models import Transaction
 from .forms import TransactionForm
@@ -24,7 +24,7 @@ class TransactionCreateView(CreateView):
             instance = form.save(commit=False)
             instance.user = request.user
             instance.save()
-            return render(request, "transactions/list.html", {"transaction": instance})
+            return redirect("transactions")
 
 
 class TransactionUpdateView(UpdateView):
