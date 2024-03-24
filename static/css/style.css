@@ -654,6 +654,10 @@ input:not([type=submit]):focus-visible {
   display: table;
 }
 
+.hidden {
+  display: none;
+}
+
 .h-12 {
   height: 3rem;
 }
@@ -801,6 +805,11 @@ input:not([type=submit]):focus-visible {
   line-height: 1rem;
 }
 
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
 .font-bold {
   font-weight: 700;
 }
@@ -825,6 +834,10 @@ input:not([type=submit]):focus-visible {
 }
 
 @media (min-width: 768px) {
+  .md\:block {
+    display: block;
+  }
+
   .md\:w-\[20vw\] {
     width: 20vw;
   }
