@@ -6,6 +6,7 @@ from budgets.models import Budget
 class Category(models.Model):
     name = models.CharField(max_length=100)
     budget = models.ForeignKey(Budget, on_delete=models.CASCADE)
+    limit = models.IntegerField(default=0)
 
     def __str__(self):
         return self.name

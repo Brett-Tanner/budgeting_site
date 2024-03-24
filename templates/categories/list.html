@@ -11,6 +11,7 @@
 			<thead>
 				<tr>
 					<th class="text-2xl font-bold">Name</th>
+					<th class="text-2xl font-bold">Limit</th>
 					<th class="text-2xl font-bold">Edit</th>
 					<th class="text-2xl font-bold">Delete</th>
 				</tr>
@@ -20,6 +21,7 @@
 				{% for category in category_list %}
 				<tr class="border-y border-neutral-gold">
 					<td class="p-2 text-xl font-bold">{{ category.name }}</h2>
+					<td>{{ category.limit }}円</td>
 					<td class="p-2">
 						<a href="{% url 'edit_category' category.id %}" class="btn btn-primary">Edit</a>
 					</td>

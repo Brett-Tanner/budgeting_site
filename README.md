@@ -28,6 +28,7 @@ Have a way of easily copying budgets from month to month along with their catego
 | Field | Type | Null | Key | Default | Extras |
 | ----- | ---- | ---- | --- | ------- | ----- |
 | budget_id | int | NO | FK | NULL | INDEX |
+| limit | int | NO | NO | 0 | NULL |
 | name | varchar | NO | NO | NULL | NULL |
 
 ### Associations

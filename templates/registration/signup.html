@@ -1,7 +1,7 @@
 {% extends 'unauthenticated.html' %}
 {% block title %}BBB | Sign Up{% endblock %}
 {% block content %}
-    <main class="flex h-screen items-center justify-center">
+    <main class="-mt-6 flex h-screen items-center justify-center">
         <form method="post" class="form">
             {% csrf_token %}
             {% for field in form %}
