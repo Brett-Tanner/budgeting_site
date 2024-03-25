@@ -140,7 +140,7 @@ CSRF_TRUSTED_ORIGINS = [
 ALLOWED_HOSTS = ["budgeting-site.fly.dev", "budgeting-site.brett-tanner.dev"]
 
 LOGIN_REDIRECT_URL = "home"
-LOGOUT_REDIRECT_URL = "home"
+LOGOUT_REDIRECT_URL = "splash"
 
 LOGIN_URL = "/accounts/login/"
 OPEN_URLS = ["/admin/", "/admin/login/", "/accounts/signup/", "/"]

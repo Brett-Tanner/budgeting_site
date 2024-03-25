@@ -2,10 +2,8 @@ from django.views.generic import TemplateView
 
 
 class HomePageView(TemplateView):
-    def get(self, request, *args, **kwargs):
-        if request.user.is_authenticated:
-            self.template_name = "home.html"
-        else:
-            self.template_name = "splash.html"
+    template_name = "home.html"
 
-        return super().get(request, *args, **kwargs)
+
+class SplashPageView(TemplateView):
+    template_name = "splash.html"
