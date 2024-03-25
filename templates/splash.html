@@ -1,0 +1,15 @@
+{% extends 'unauthenticated.html' %} {% block content %}
+<main class="-mt-6 flex h-screen items-center justify-center">
+  <div
+    class="flex flex-col items-center gap-3 text-center text-3xl font-bold text-neutral-gold md:w-[20vw]"
+  >
+    <a href="{% url 'login' %}" class="btn btn-primary w-full">Log in</a>
+    <div class="flex w-full items-center gap-1">
+      <hr class="flex-grow border-2 border-neutral-gold" />
+      <p class="text-base text-neutral-gold">OR</p>
+      <hr class="flex-grow border-2 border-neutral-gold" />
+    </div>
+    <a href="{% url 'signup' %}" class="btn btn-primary w-full">Sign up</a>
+  </div>
+</main>
+{% endblock content %}
