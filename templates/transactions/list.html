@@ -3,37 +3,9 @@
     BBB | Transactions
 {% endblock title %}
 {% block content %}
-    <main class="flex flex-wrap items-start justify-around gap-3 p-3">
+    <main class="flex flex-col items-center gap-3 p-3">
         <h1 class="w-full text-center text-4xl font-bold">Transactions</h1>
-        <div class="flex w-full items-center justify-center">
-            <a href="{% url 'new_transaction' %}" class="btn btn-primary">Add transaction</a>
-        </div>
-        <table aria-label="Transactions table" class="w-full text-center">
-            <thead>
-                <tr>
-                    <th class="border border-neutral-gold/50 text-lg font-bold">Date</th>
-                    <th class="border border-neutral-gold/50 text-lg font-bold">Person</th>
-                    <th class="border border-neutral-gold/50 text-lg font-bold">Category</th>
-                </tr>
-                <tr>
-                    <th class="border border-neutral-gold/50 text-lg font-bold" colspan="2">Description</th>
-                    <th class="border border-neutral-gold/50 text-lg font-bold">Amount</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for transaction in transaction_list %}
-                    <tr>
-                        <td class="border-r border-neutral-blue bg-neutral-gold/90 p-2 text-neutral-blue">{{ transaction.date }}</td>
-                        <td class="bg-neutral-gold/90 p-2 text-neutral-blue">{{ transaction.user.username }}</td>
-                        <td class="border-l border-neutral-blue bg-neutral-gold/90 p-2 text-neutral-blue">{{ transaction.category.name }}</td>
-                    </tr>
-                    <tr>
-                        <td class="border border-neutral-gold/50 border-b-neutral-gold p-2"
-                            colspan="2">{{ transaction.name }}</td>
-                        <td class="border border-neutral-gold/50 border-b-neutral-gold p-2">{{ transaction.amount }}円</td>
-                    </tr>
-                {% endfor %}
-            </tbody>
-        </table>
+        <a href="{% url 'new_transaction' %}" class="btn btn-primary">Add transaction</a>
+        {% include 'transactions/_table.html' with transactions=transaction_list %}
     </main>
 {% endblock %}

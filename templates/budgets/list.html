@@ -9,16 +9,7 @@
             <a href="{% url 'new_budget' %}" class="btn btn-primary">Add new budget</a>
         </div>
         {% for budget in budget_list %}
-            <div class="flex flex-col gap-2 rounded-xl border border-neutral-gold p-2">
-                <a href="{{ budget.get_absolute_url }}">
-                    <h2 class="text-2xl font-bold">{{ budget.name }}</h2>
-                </a>
-                <p>By: {{ budget.user }}</p>
-                <p>From {{ budget.start_date }} to {{ budget.end_date }}</p>
-                <p>Income: {{ budget.income }}円</p>
-                <p>Predicted Expenses:</p>
-                <p>Actual Expenses:</p>
-            </div>
+            {% include 'budgets/_details.html' with budget=budget %}
         {% endfor %}
     </main>
 {% endblock %}

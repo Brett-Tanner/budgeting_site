@@ -8,23 +8,6 @@
         <div class="flex w-full items-center justify-center">
             <a href="{% url 'new_category' %}" class="btn btn-primary">Add new category</a>
         </div>
-        <table aria-label="Categories table" class="w-full text-center">
-            <thead>
-                <tr>
-                    <th class="text-2xl font-bold">Name</th>
-                    <th class="text-2xl font-bold">Limit</th>
-                    <th class="text-2xl font-bold">Spent</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for category in category_list %}
-                    <tr class="border-y border-neutral-gold">
-                        <td class="p-2 text-xl font-bold">{{ category.name }}</td>
-                        <td>{{ category.limit }}円</td>
-                        <td>TBI</td>
-                    </tr>
-                {% endfor %}
-            </tbody>
-        </table>
+        {% include 'categories/_table.html' with categories=category_list budget=false %}
     </main>
 {% endblock %}

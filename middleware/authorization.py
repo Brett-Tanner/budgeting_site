@@ -9,7 +9,6 @@ class LoginRequiredMiddleware:
         self.open_urls = [self.login_url] + getattr(settings, "OPEN_URLS", [])
 
     def __call__(self, request):
-        print(request.user.is_authenticated)
         if (
             not request.user.is_authenticated
             and not request.path_info in self.open_urls

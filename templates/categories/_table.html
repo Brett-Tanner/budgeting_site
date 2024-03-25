@@ -1,0 +1,18 @@
+<table aria-label="Categories table" class="w-full text-center">
+  <thead>
+    <tr>
+      <th class="text-2xl font-bold">Name</th>
+      <th class="text-2xl font-bold">Limit</th>
+      <th class="text-2xl font-bold">Spent</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for category in categories %}
+    <tr class="border-y border-neutral-gold">
+      <td class="p-2 text-xl font-bold">{{ category.name }}</td>
+      <td>{{ category.limit }}円</td>
+      <td>TBI</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>

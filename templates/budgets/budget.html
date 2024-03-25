@@ -1,14 +1,15 @@
 {% extends 'authenticated.html' %}
-
 {% block content %}
-  <main>
-	  <a href="{% url 'budgets' %}" class="btn btn-primary">Back to budget list</a>
-	<h1>{{ budget.name }}</h1>
-	<p>From {{ budget.start_date }} to {{ budget.end_date }}</p>
-	<p>Income: {{ budget.income }}円</p>
-	<p>Predicted expenses:</p>
-	<p>Actual expenses:</p>
-	<a href="{% url 'edit_budget' budget.id %}" class="btn btn-primary">Edit</a>
-	<a href="{% url 'delete_budget' budget.id %}" class="btn bg-red-700 text-white">Delete</a>
-  </main>
+    <main class="flex flex-col gap-3 p-3">
+        <a href="{% url 'budgets' %}" class="btn btn-primary self-start">Back to budget list</a>
+        {% include 'budgets/_details.html' with budget=budget %}
+        {% for category in budget.category_set.all %}
+            <details>
+                <summary class="mb-3 cursor-pointer rounded-lg bg-neutral-gold p-2 font-bold text-neutral-blue">
+                    {{ category.name }}
+                </summary>
+                {% include 'transactions/_table.html' with transactions=category.transaction_set.all %}
+            </details>
+        {% endfor %}
+    </main>
 {% endblock content %}

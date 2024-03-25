@@ -1,0 +1,20 @@
+<div
+  class="flex flex-col items-center gap-2 rounded-xl border border-neutral-gold p-2"
+>
+  <a href="{{ budget.get_absolute_url }}">
+    <h2 class="text-2xl font-bold">{{ budget.name }}</h2>
+  </a>
+  <p>By: {{ budget.user }}</p>
+  <p>From {{ budget.start_date }} to {{ budget.end_date }}</p>
+  <p>Income: {{ budget.income }}円</p>
+  <p>Predicted Expenses:</p>
+  <p>Actual Expenses:</p>
+  <div class="flex justify-center gap-3">
+    <a href="{% url 'edit_budget' budget.id %}" class="btn btn-primary">Edit</a>
+    <a
+      href="{% url 'delete_budget' budget.id %}"
+      class="btn bg-red-700 text-white"
+      >Delete</a
+    >
+  </div>
+</div>
