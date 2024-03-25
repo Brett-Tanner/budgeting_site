@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --nav-offset: calc(100vh - 3rem);
+	--nav-offset: calc(100vh - 3rem);
 }
 
 @layer base {
@@ -12,25 +12,25 @@
 		height: var(--nav-offset);
 	}
 
-	input:not([type=submit]) {
-		@apply rounded-lg p-1 focus-visible:outline-none focus-visible:outline-neutral-gold
+	input:not([type="submit"]) {
+		@apply rounded-lg p-1 focus-visible:outline-none focus-visible:outline-neutral-gold;
 	}
 }
 
 @layer components {
 	.btn {
-		@apply border rounded-lg p-2 focus-visible:outline-none focus-visible:outline-neutral-gold
+		@apply border rounded-lg p-2 focus-visible:outline-none focus-visible:outline-neutral-gold;
 	}
 
 	.btn-primary {
-		@apply border-light-gold text-neutral-gold hover:bg-neutral-gold hover:text-neutral-blue
+		@apply border-light-gold text-neutral-gold hover:bg-neutral-gold hover:text-neutral-blue;
 	}
 
 	.form {
-		@apply flex flex-col items-center gap-5 rounded-xl border-2 border-neutral-gold p-5 text-neutral-gold
+		@apply flex flex-col items-center gap-5 rounded-xl border-2 border-neutral-gold p-5 text-neutral-gold;
 	}
 
 	.main_nav_link {
-		@apply h-full flex items-center p-2 hover:bg-neutral-gold hover:text-dark-blue
+		@apply h-full flex items-center p-2 hover:bg-neutral-gold hover:text-dark-blue;
 	}
 }

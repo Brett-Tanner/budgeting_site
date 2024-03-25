@@ -1,8 +1,9 @@
 {% extends 'authenticated.html' %}
-
-{% block title %}BBB | Add Category{% endblock title %}
+{% block title %}
+    BBB | Add Category
+{% endblock title %}
 {% block content %}
-	<main class="flex h-screen items-center justify-center text-center text-2xl">
-		{% include '../shared/vertical_form.html' with submit='Add' %}
-	</main>
+    <main class="flex h-screen items-center justify-center text-center text-2xl">
+        {% include '../shared/vertical_form.html' with submit='Add' %}
+    </main>
 {% endblock content %}

@@ -1,10 +1,8 @@
 from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from django.urls import reverse_lazy
-from django.shortcuts import render
 
 from .models import Budget
-from .forms import BudgetForm
 
 
 class BudgetListView(ListView):
@@ -21,15 +19,10 @@ class BudgetCreateView(CreateView):
     model = Budget
     fields = ["name", "start_date", "end_date", "income"]
     template_name = "budgets/new.html"
-    form = BudgetForm()
 
-    def post(self, request, *args, **kwargs):
-        form = BudgetForm(request.POST)
-        if form.is_valid():
-            instance = form.save(commit=False)
-            instance.user_id = request.user.id
-            instance.save()
-            return render(request, "budgets/budget.html", {"budget": instance})
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super().form_valid(form)
 
 
 class BudgetUpdateView(UpdateView):
