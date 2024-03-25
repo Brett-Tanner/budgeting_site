@@ -1,6 +1,6 @@
 {% extends 'authenticated.html' %}
 {% block content %}
-    <main class="flex h-screen flex-col items-center justify-center gap-3">
+    <main class="mt-0 flex h-screen flex-col items-center justify-center gap-3">
         <h1>Hi, {{ user.username }}</h1>
         <div class="flex gap-3">
             <a href="{% url 'transactions' %}" class="btn btn-primary">Transactions</a>
