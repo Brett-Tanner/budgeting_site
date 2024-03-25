@@ -52,6 +52,7 @@ MIDDLEWARE = [
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
+    "middleware.authorization.LoginRequiredMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
@@ -140,6 +141,10 @@ ALLOWED_HOSTS = ["budgeting-site.fly.dev", "budgeting-site.brett-tanner.dev"]
 
 LOGIN_REDIRECT_URL = "home"
 LOGOUT_REDIRECT_URL = "home"
+
+LOGIN_URL = "/accounts/login/"
+OPEN_URLS = ["/admin/", "/admin/login/", "/accounts/signup/", "/"]
+
 
 # Override production variables if in dev environment
 if os.environ.get("DEBUG", False):
