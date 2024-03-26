@@ -3,7 +3,7 @@
     <main class="flex flex-col gap-3 p-3">
         <a href="{% url 'budgets' %}" class="btn btn-primary self-start">Back to budget list</a>
         {% include 'budgets/_details.html' with budget=budget %}
-        {% for category in budget.category_set.all %}
+        {% for category in categories %}
             <details>
                 <summary class="mb-3 cursor-pointer rounded-lg bg-neutral-gold p-2 font-bold text-neutral-blue">
                     {{ category.name }}

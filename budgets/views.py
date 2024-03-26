@@ -18,6 +18,11 @@ class BudgetDetailView(UserPassesTestMixin, DetailView):
     model = Budget
     template_name = "budgets/budget.html"
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["categories"] = self.get_object().category_set.all()
+        return context
+
     def test_func(self):
         return self.request.user == self.get_object().user
 
